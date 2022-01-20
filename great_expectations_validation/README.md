@@ -528,3 +528,273 @@ The second json file is the validation result, after checking the data by using 
 They will be rendered in a html page such as the below figure.
 
 ![Expectation_ui](../images/expectations_ui.png)
+
+
+## 5. Create checkpoint
+
+**A Checkpoint uses a Validator to run an Expectation Suite against a Batch (or Batch Request)**. Running a 
+checkpoint produces Validation Results. Checkpoints can also be configured to perform **additional Actions**.
+
+For now, we create a checkpoint that will run the Expectation Suite we previously configured. It will check the age 
+of a person.
+
+
+### 5.1 Create a checkpoint with CLI
+
+To create a checkpoint by using the CLI, use the below command
+
+```shell
+great_expectations checkpoint new census_income_checkpoint
+```
+
+This command will generate a new notebook that helps to create a checkpoint. I will break down the cell in the 
+notebook one by one. 
+
+#### 5.1.1 Step1: Get the project context
+
+```python
+from ruamel.yaml import YAML
+import great_expectations as ge
+from pprint import pprint
+
+yaml = YAML()
+
+# Step1: Get the project context
+context = ge.get_context()
+
+```
+
+#### 5.1.2 Step2: Edit your main checkpoint config. I contains 
+```python
+
+# Step2: Edit your main checkpoint config
+my_checkpoint_name = (
+    "census_income_checkpoint"  # This was populated from your CLI command.
+)
+
+yaml_config = f"""
+name: {my_checkpoint_name}
+config_version: 1.0
+class_name: SimpleCheckpoint
+run_name_template: "%Y%m%d-%H%M%S-my-run-name-template"
+validations:
+  - batch_request:
+      datasource_name: census_income_validation
+      data_connector_name: default_inferred_data_connector_name
+      data_asset_name: adult_with_duplicates.csv
+      data_connector_query:
+        index: -1
+    expectation_suite_name: census_income_expectation_suite.test1
+"""
+print(yaml_config)
+```
+
+Some helper function:
+```python
+# if you don't know the data asset name in your project, you can use below command to get the available asset name list
+pprint(context.get_available_data_asset_names())
+
+# you can also get available expectation suite list
+pprint(context.list_expectation_suite_names())
+```
+
+#### 5.1.3 Step3: Test your checkpoint configuration
+
+This **test_yaml_config() function** is meant to enable fast dev loops. If your configuration is correct, this cell 
+will show a message that you successfully instantiated a Checkpoint. **You can continually edit your Checkpoint 
+config yaml and re-run the cell to check until the new config is valid**.
+
+If you instead wish to use python instead of yaml to configure your Checkpoint, you can use **context.add_checkpoint() 
+and specify all the required parameters**.
+
+```python
+my_checkpoint = context.test_yaml_config(yaml_config=yaml_config)
+```
+
+After the validation, you can review the Checkpoint configuration by using the following cell to print out the 
+full yaml configuration. 
+
+```python
+pprint(my_checkpoint.get_substituted_config().to_yaml_str())
+```
+
+#### 5.1.4 Step 4: Add the checkpoint to your project context
+
+To add a checkpoint to your project context, use the following command, it saves the Checkpoint to Checkpoint Store
+of the project. It also means you can have multiple checkpoints in your project.
+
+```python
+context.add_checkpoint(**yaml.load(yaml_config))
+```
+
+#### 5.1.5 Run checkpoint and view the output 
+
+To run the Checkpoint, you can use below command now and review its output in Data Docs
+
+```python
+context.run_checkpoint(checkpoint_name=my_checkpoint_name)
+context.open_data_docs()
+```
+
+
+## 6. Edit existing expectation suite
+
+An Expectation is a statement describing a verifiable property of data (data validation rules). For example, the rule
+'the value in column age must be between 0 and 120' is a value validation rule.
+
+In section 4, we use a profiler to generate some generic expectations. Now we need to edit them to make the validation 
+rules (expectations) make sense. But we will not cover all the built-in expectations that are provided by the GE.
+
+You can find the full list of the built-in expectation in the official doc [here](https://docs.greatexpectations.io/docs/reference/expectations/expectations).
+You can also define/implement your own expectation. 
+
+
+To edit an existing expectation suite, run below command. The argument is the name of the expectation that we entered in
+section 4.
+
+```shell
+great_expectations suite edit census_income_expectation_suite.test1
+```
+
+After running this command, a jupyter notebook will be opened, in it you can edit existing expectations. **Sometimes,
+this notebook is buggy.**. The goal of this notebook is to generate/edit the file **expectations/census_income_expectation_suite/test1.json**
+
+**You can edit the file directly without opening the notebook. The downside is there will be no more syntax check for 
+your expectation rules. So you can easily introduce bug here.**
+
+After editing, the new version of test1.json looks like:
+```json
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "census_income_expectation_suite.test1",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "age",
+          "workclass",
+          "fnlwgt",
+          "education",
+          "education-num",
+          "marital-status",
+          "occupation",
+          "relationship",
+          "race",
+          "sex",
+          "capital-gain",
+          "capital-loss",
+          "hours-per-week",
+          "native-country",
+          "income"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 32607,
+        "min_value": 32607
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 40,
+        "min_value": 20
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 40,
+        "min_value": 20
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "age"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 120.0,
+        "min_value": 0.0
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "adult_with_duplicates.csv",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "census_income_validation",
+          "limit": 1000
+        },
+        "citation_date": "2022-01-19T17:27:48.573655Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.14.1"
+  }
+}
+```
+
+It has two table validation rules:
+- Must have these columns in this order: age, workclass, fnlwgt, education, education-num, marital-status, occupation, 
+  relationship, race, sex, capital-gain, capital-loss, hours-per-week, native-country, income
+- Must have greater than or equal to 32607 and less than or equal to 32607 rows.
+
+It only has 5 validation rules for column age now:
+- minimum value must be greater than or equal to 0.0 and less than or equal to 0.0.
+- mean must be greater than or equal to 20 and less than or equal to 40
+- median must be greater than or equal to 20 and less than or equal to 40.
+- values must never be null.
+- values must be greater than or equal to 0.0 and less than or equal to 120.0. 
+
+
+Now we can test the new expectations on data
+
+You can use the following code to run the checkpoint. (You can find below code in notebook run_check_point )
+
+```python
+from ruamel.yaml import YAML
+import great_expectations as ge
+from pprint import pprint
+
+yaml = YAML()
+context = ge.get_context()
+
+my_checkpoint_name = "census_income_checkpoint"
+context.run_checkpoint(checkpoint_name=my_checkpoint_name)
+context.open_data_docs()
+```
+
+Because expectations are registered in the checkpoint in section 5, so when you run the checkpoint, all above 
+expectations will be tested. You will receive the below report
+
+![Expectation_fail](../images/expectations_fail_validation.png)
+
+You could notice, now we have three expectations that did not pass. 
