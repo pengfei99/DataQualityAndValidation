@@ -623,6 +623,12 @@ pprint(my_checkpoint.get_substituted_config().to_yaml_str())
 To add a checkpoint to your project context, use the following command, it saves the Checkpoint to Checkpoint Store
 of the project. It also means you can have multiple checkpoints in your project.
 
+To test your checkpoint, you can use below command. If it's  valid, you should see "Successfully instantiated SimpleCheckpoint"
+```python
+my_checkpoint = context.test_yaml_config(yaml_config=yaml_config)
+```
+
+If your checkpoint config is valid, you can save it to your project context
 ```python
 context.add_checkpoint(**yaml.load(yaml_config))
 ```
