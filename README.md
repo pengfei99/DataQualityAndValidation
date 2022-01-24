@@ -7,7 +7,7 @@ In this Project, we will explore tools/libraries that can help us to do data val
 Quality evaluation is a topic much more complex than the data validation. So we will learn how to do data validation 
 first.
 
-### 1.1 Data validation process
+### 1.1 Data validation process overview
 I did not find good literatures that define the different steps of how to do the data validation process.
 Below, I just illustrate how I do it in general.
 
@@ -28,6 +28,15 @@ If you don't have documents or metadata that provides you these information, you
 
 Here are some tools that you can use
 
+## Common problems in semi-structure data
+
+- unescaped commas in unquoted (comma-separated) values: e.g. some word, some word in a text column. the commas is not escaped 
+    and will cause column parsing error.
+- an unspecified non-UTF-8 encoding: e.g. using iso-8859-1 ("latin-1" to its friends), or iso-8859-15 ("latin-9") 
+- different null markers in different fields(columns), and some cases, different null markers in a single field(columns)
+- field names (column headers) that included spaces, apostrophes, dashes and a non-ASCII 
+   non-alphanumeric character
+- multiple date formats, even within a single field. For example year with 4 digit, and 2 digit. 
 
 ## Types of Data Validation
 
