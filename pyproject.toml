@@ -18,6 +18,7 @@ dbt-postgres = "^1.0.1"
 voluptuous = "^0.12.2"
 pydeequ = "^1.0.1"
 pyspark = "^3.2.1"
+dbt-bigquery = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 
