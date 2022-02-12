@@ -4,15 +4,18 @@ In this Project, we will explore tools/libraries that can help us to do data val
 
 ## 1. Steps in data quality evaluation and data validation
 
-Quality evaluation is a topic much more complex than the data validation. So we will learn how to do data validation 
+Data Quality evaluation is a topic much more complex than the data validation. So we will learn how to do data validation 
 first.
 
 ### 1.1 Data validation process overview
 I did not find good literatures that define the different steps of how to do the data validation process.
 Below, I just illustrate how I do it in general.
 
-1. Understand the raw data: 
-2. 
+1. Understand the raw data: collect documentation, metadata, run data profiling tools
+2. Setup validation rules: Based on your understanding of the data, you can setup validation rules.
+3. Detect anomalies:  Applying validation rules on the data to detect all rows that violate the validation rules.
+4. Correct/Clean data: Imputation, drop rows, change values, etc.
+5. Repeat 3,4 till no anomaly 
 
 #### 1.1.1 Understand your data
 
