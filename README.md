@@ -24,7 +24,23 @@ For example, for a structure/semi-structure data set, you need to know :
 - for numeric columns, you need to know the basic stats such as min, max, median, mean, standard deviation, etc. 
 - for categorical columns, you need to know all the possible values, the value that has most count, etc.
 
-If you don't have documents or metadata that provides you these information, you need to generate them by yourself. 
+If you don't have documents or metadata that provides you these information, you need to generate them by yourself. We call this data profiling.
+
+## Data Profiling
+
+Data Profiling is the process of running analysis on source data to understand it’s structure and content. You can get following insights by doing data profiling on a new dataset:
+- Structure Discovery: Number of columns and their names in the source data
+- Content Discovery: Data types of the columns, Identify Nullable columns
+- Cardinality of Data: Number of Distinct Values in each column
+- Statistical Analysis: Min / Max / Mean / Std Dev of numerical columns
+- Value Histograms: Frequency of values in low-cardinality columns
+
+### Why Data Profiling?
+Data profiling is typically needed to address following points:
+- Use data profiling before beginning to ingest data from a new source to discover if data is in suitable form — and make a “go / no go” decision on the dataset.
+- Identify and correct data quality issues in source data, even before starting to move it into target database.
+- Reconcile vendor specification with real data
+- Identify data quality issues that can be corrected by Extract-Transform-Load (ETL), while data is moved from source to target. Data profiling can uncover if additional processing is needed before feeding data to pipeline.
 
 Here are some tools that you can use
 
