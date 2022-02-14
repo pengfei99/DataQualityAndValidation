@@ -100,6 +100,7 @@ to ensure that the data is correct before storing it in the database. Common typ
 
 - pandas profiling
 - TDDA, pydqc, Bulwark, Engarde, Voluptous, Opulent Pandas, mobydq, dvc, aws dedupe, datacleaner, and Great Expectations
+- soda sql (https://github.com/sodadata/soda-sql)
 - google's tensorflow datavalidation
 
-## commercial solutions
+## Commerciales solutions
