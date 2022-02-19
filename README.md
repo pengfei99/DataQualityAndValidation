@@ -1,18 +1,19 @@
 # DataQualityAndValidation
 
-In this Project, we will explore tools/libraries that can help us to do data validation and data quality checks
+Quality evaluation is a topic much more complex than the data validation.  In this Project, we will only focus on
+data validation. For more information about data quality management, please check [data quality management](docs/data_quality_management.md)
+
 
 ## 1. Steps in data quality evaluation and data validation
 
-Data Quality evaluation is a topic much more complex than the data validation. So we will learn how to do data validation 
-first.
+Let's start by understanding different steps in data validation process.
 
 ### 1.1 Data validation process overview
 I did not find good literatures that define the different steps of how to do the data validation process.
 Below, I just illustrate how I do it in general.
 
 1. Understand the raw data: collect documentation, metadata, run data profiling tools
-2. Setup validation rules: Based on your understanding of the data, you can setup validation rules.
+2. Setup validation rules: Based on your understanding of the data, you can set up validation rules.
 3. Detect anomalies:  Applying validation rules on the data to detect all rows that violate the validation rules.
 4. Correct/Clean data: Imputation, drop rows, change values, etc.
 5. Repeat 3,4 till no anomaly 
@@ -31,7 +32,7 @@ If you don't have documents or metadata that provides you these information, you
 
 ## Data Profiling
 
-Data Profiling is the process of running analysis on source data to understand it’s structure and content. You can get following insights by doing data profiling on a new dataset:
+Data Profiling is the process of running analysis on source data to understand its structure and content. You can get following insights by doing data profiling on a new dataset:
 - Structure Discovery: Number of columns and their names in the source data
 - Content Discovery: Data types of the columns, Identify Nullable columns
 - Cardinality of Data: Number of Distinct Values in each column
