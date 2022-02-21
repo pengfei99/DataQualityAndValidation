@@ -32,7 +32,9 @@ If you don't have documents or metadata that provides you these information, you
 
 ## Data Profiling
 
-Data Profiling is the process of running analysis on source data to understand its structure and content. You can get following insights by doing data profiling on a new dataset:
+Data Profiling is the process of running analysis on source data to understand its structure and content. You can get 
+following insights by doing data profiling on a new dataset:
+
 - Structure Discovery: Number of columns and their names in the source data
 - Content Discovery: Data types of the columns, Identify Nullable columns
 - Cardinality of Data: Number of Distinct Values in each column
@@ -41,22 +43,25 @@ Data Profiling is the process of running analysis on source data to understand i
 
 ### Why Data Profiling?
 Data profiling is typically needed to address following points:
-- Use data profiling before beginning to ingest data from a new source to discover if data is in suitable form — and make a “go / no go” decision on the dataset.
+- Use data profiling before beginning to ingest data from a new source to discover if data is in suitable form — and 
+   make a “go / no go” decision on the dataset.
 - Identify and correct data quality issues in source data, even before starting to move it into target database.
 - Reconcile vendor specification with real data
-- Identify data quality issues that can be corrected by Extract-Transform-Load (ETL), while data is moved from source to target. Data profiling can uncover if additional processing is needed before feeding data to pipeline.
+- Identify data quality issues that can be corrected by Extract-Transform-Load (ETL), while data is moved from source 
+   to target. Data profiling can uncover if additional processing is needed before feeding data to pipeline.
+- Help you to define validation rules
 
 Here are some tools that you can use
 
 ## Common problems in semi-structure data
 
-- unescaped commas in unquoted (comma-separated) values: e.g. some word, some word in a text column. the commas is not escaped 
-    and will cause column parsing error.
+- unescaped commas in unquoted (comma-separated) values: e.g. some word, some word in a text column. the commas are not escaped 
+    and will cause column parsing error. (Orderliness)
 - an unspecified non-UTF-8 encoding: e.g. using iso-8859-1 ("latin-1" to its friends), or iso-8859-15 ("latin-9") 
-- different null markers in different fields(columns), and some cases, different null markers in a single field(columns)
+- different null markers in different fields(columns), and some cases, different null markers in a single field(columns) (Orderliness)
 - field names (column headers) that included spaces, apostrophes, dashes and a non-ASCII 
-   non-alphanumeric character
-- multiple date formats, even within a single field. For example year with 4 digit, and 2 digit. 
+   non-alphanumeric character (Orderliness)
+- multiple date formats, even within a single field. For example year with 4 digit, and 2 digit. (Orderliness)
 
 ## Types of Data Validation
 

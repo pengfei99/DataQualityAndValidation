@@ -15,6 +15,8 @@ The state of data can be either “good” or “bad”, depending on to what ex
 - Orderliness
 - Timeliness
 - Uniqueness
+- Relevance
+- Interpretability
 
 ### 1.1 Accuracy
 - Definition: Accuracy refers to the correctness of data, that is, whether the recorded value is in conformity with the 
@@ -69,6 +71,22 @@ actual value in reality, with respect to its intended use.
 - Good example: We only have one record for the user’s name, address, and birthdate.
 - Bad example: We have multiple duplicated records for the user’s name, address, and birthdate.
 - Measurement Metric: Number of duplicated data and how many times the data has been duplicated.
+
+### 1.9 Relevance
+- Definition: Relevance measures if data satisfait the purpose of the data collection that can help data scientist to solve the problem.
+- Good example: Data can answer all the requirement of the data scientist
+- Bad example: Data can not answer the requirement of the data scientist
+- Measurement Metric: Number of the user complaint divise all users. This can be objective, but still a good indicator
+
+### 1.10 Interpretability 
+- Definition: Interpretability reflects the ease with which users may understand and properly use and analyse
+the data. The adequacy of the definitions of concepts, target populations, variables and terminology
+underlying the data, and information describing the limitations of the data, if any, largely determines
+the degree of interpretability
+- Good example: Self-explanatory column name, categorical values, details description of each column (e.g. null value, terminology of distinct values)
+- Bad example: Incomprehensible column name, categorical value, no description on columns.
+- Measurement Metric: Number of the user complaint divise all users. This can be objective, but still a good indicator
+
 
 ## 2 Common data quality metric
 - The ratio of data to errors: monitors the number of known data errors compared to the entire data set. 
