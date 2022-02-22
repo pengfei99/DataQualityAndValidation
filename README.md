@@ -109,14 +109,31 @@ There are different ways to categorize data validation rules. In this project I 
                        formatting rules. For example, country column can only contain values from valid ISO country 
                        codes list.
   
-### 2.3 Apply validation rules on data.
+### 2.3 Detect anomalies: Apply validation rules on data.
+
+Once, you have defined the validation rules, you need to apply them on data. To do that you can 
+- implement the validation rule by hand
+- use a validation tool 
+
+#### 2.3.1 Implement validation rule by hand 
+
+This could work, if the project does not contain complexe data set. And it's a very time-consuming process and hard to
+maintain.
+
+### 2.3.2 Validation Tool evaluation metric:
+
+- Declarative validation rule
+- Rich built-in validation rule
+- Easy to implement new validation rules
+- Able to reuse existing validation rule set
+- Provide a profiler to generate possible validation rules for a given dataset.
+- Detailed validation report that indicates which validation rule failed and which row failed the validation rule
 
 
- 
 ## Open source projects
 
 - pandas profiling
-- TDDA, pydqc, Bulwark, Engarde, Voluptous, Opulent Pandas, mobydq, dvc, aws dedupe, datacleaner, and Great Expectations
+- TDDA, pydqc, Bulwark, Engarde, Voluptous, Opulent Pandas, aws dedupe, and Great Expectations
 - soda sql (https://github.com/sodadata/soda-sql)
 - google's tensorflow datavalidation
 
