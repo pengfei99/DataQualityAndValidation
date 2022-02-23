@@ -97,6 +97,7 @@ validations_store_name: validations_store
 evaluation_parameter_store_name: evaluation_parameter_store
 checkpoint_store_name: checkpoint_store
 
+# configuration for output data validation report
 data_docs_sites:
   # Data Docs make it simple to visualize data quality in your project. These
   # include Expectations, Validations & Profiles. The are built for all
@@ -105,10 +106,10 @@ data_docs_sites:
   local_site:
     class_name: SiteBuilder
     # set to false to hide how-to buttons in Data Docs
-    show_how_to_buttons: true
+    show_how_to_buttons: false
     store_backend:
       class_name: TupleFilesystemStoreBackend
-      base_directory: uncommitted/data_docs/local_site/
+      base_directory: /tmp/data_validation/local_site #uncommitted/data_docs/local_site/
     site_index_builder:
       class_name: DefaultSiteIndexBuilder
 
