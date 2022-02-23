@@ -111,7 +111,7 @@ There are different ways to categorize data validation rules. In this project I 
   
 ### 2.3 Detect anomalies: Apply validation rules on data.
 
-Once, you have defined the validation rules, you need to apply them on data. To do that you can 
+After you have defined the validation rules, you need to apply them on data. To do that you can 
 - implement the validation rule by hand
 - use a validation tool 
 
@@ -132,12 +132,32 @@ maintain.
 
 ## Open source projects
 
-- pandas profiling
-- TDDA, pydqc, Bulwark, Engarde, Voluptous, Opulent Pandas, aws dedupe, and Great Expectations
-- soda sql (https://github.com/sodadata/soda-sql)
-- google's tensorflow datavalidation
+### Python solution
+ 
+- [Great Expectations](https://github.com/great-expectations/great_expectations) (Very Active)
+- [google's tensorflow datavalidation](https://github.com/tensorflow/data-validation) (Very Active)
+- [aws dedupe](https://github.com/awslabs/deequ) (Very Active)
+- [google's DVT](https://github.com/GoogleCloudPlatform/professional-services-data-validator) (Very Active)
+- [TDDA](https://github.com/tdda/tdda) (Very Active)
+- [soda sql](https://github.com/sodadata/soda-sql) (Very Active, but only works on sql dataset)
+- [DBT](https://github.com/dbt-labs/dbt-core) (Very Active, but only works on sql dataset)
+- [pydqc](https://github.com/SauceCat/pydqc) (2 years since last update), 
+- [Bulwark](https://github.com/zaxr/bulwark) (2 years since last update), 
+- [Engarde](https://github.com/engarde-dev/engarde) (4 years since last update), 
+- [Voluptous](https://github.com/alecthomas/voluptuous) (no more update, but pr possible), 
+- [Opulent Pandas](https://github.com/danielvdende/opulent-pandas) (3 years since last update), 
+
+
+
+### R package solution
+- [Pointblank](https://github.com/rich-iannone/pointblank/) (Very active) [docs: ](https://rich-iannone.github.io/pointblank/articles/VALID-I.html)
+- [data.validator](https://github.com/Appsilon/data.validator) (1 year since last update), 
+- [dataMaid](https://github.com/ekstroem/dataMaid) (1 year since last update),
+- [validate](https://github.com/data-cleaning/validate) (Very active)
 
 ## Commerciales solutions
+
+-[Collibra](https://www.collibra.com/us/en/platform/data-quality)
 
 
 ## Common problems in semi-structure data
@@ -149,3 +169,6 @@ maintain.
 - field names (column headers) that included spaces, apostrophes, dashes and a non-ASCII 
    non-alphanumeric character (Orderliness)
 - multiple date formats, even within a single field. For example year with 4 digit, and 2 digit. (Orderliness)
+
+
+[Generic_Statistical_Business_Process_Model](https://statswiki.unece.org/display/GSBPM/Clickable+GSBPM+v5.1)
