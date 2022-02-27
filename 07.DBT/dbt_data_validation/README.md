@@ -4,16 +4,20 @@ dbt provides native data validation supports on all its data related features su
 For more details about dbt features, please visit this [doc](https://github.com/pengfei99/DBTTutorial). In this tutorial,
 I only focus on the data validation inside dbt.
 
+
+
 Pros:
 - easy to put in place/run
-- can be integrated easily into each step of data transformation
-- high level validation rule declaration, no need to write implementation logic
+- can be integrated easily into each step of data transformation 
+- Declarative validation rule 
 
 Cons:
 - Only works with structure data (that can be read by dbt)
+- No profiler for automatic data validation rule generation
 - limit built in validation rules(only 4)
 - custom validation rules need to be written in sql.
 - can only validate at column level, can't check table level
+- High language dependencies sql
 
 ## 1. Built-in validation rules:
 For now dbt only provides four possible tests:
