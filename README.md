@@ -25,7 +25,9 @@ data validation. For more information about data quality management, please chec
 **Data Validation is an activity verifying whether a combination of values is a member of a set of acceptable combinations.**
 
 
-The purpose of data validation is to ensure a certain level of quality of the final data. 
+The purpose of data validation is to ensure a certain level of quality of the final data. Data validation can help us
+to verify Completeness, Uniqueness, Orderliness, Consistency, and some level of Accuracy. For the Auditability, 
+Credibility, Timeliness, Relevance, Interpretability, data validation can't help you at all.
 
 
 ## 2 Data validation process
@@ -40,7 +42,8 @@ Below, I just illustrate how I do it in general.
 1. Understand the raw data: collect documentation, metadata, run data profiling tools
 2. Setup validation rules: Based on your understanding of the data, you can set up validation rules.
 3. Detect anomalies:  Applying validation rules on the data to detect all rows that violate the validation rules.
-4. Correct/Clean data: Imputation, drop rows, change values, etc.
+4. Determine if the anomaly is an error or data shifting. If it's an error, correct/clean data (e.g. imputation, drop rows, change values, etc.)
+   if it's a data shifting, we need to update validation rules.
 5. Repeat 3,4 till no anomaly 
 
 ### 2.1 Understand your data
@@ -117,10 +120,10 @@ After you have defined the validation rules, you need to apply them on data. To 
 
 #### 2.3.1 Implement validation rule by hand 
 
-This could work, if the project does not contain complexe data set. And it's a very time-consuming process and hard to
+This could work, if the project does not contain complex data set. And it's a very time-consuming process and hard to
 maintain.
 
-### 2.3.2 Validation Tool evaluation metric:
+#### 2.3.2 Validation Tool evaluation metric:
 
 - Declarative validation rule
 - Rich built-in validation rule
@@ -130,9 +133,9 @@ maintain.
 - Detailed validation report that indicates which validation rule failed and which row failed the validation rule
 
 
-## Open source projects
+#### 2.3.3 Open source solution
 
-### Python solution
+##### Python based solution
  
 - [Great Expectations](https://github.com/great-expectations/great_expectations) (Very Active)
 - [google's tensorflow datavalidation](https://github.com/tensorflow/data-validation) (Very Active)
@@ -148,17 +151,34 @@ maintain.
 - [Opulent Pandas](https://github.com/danielvdende/opulent-pandas) (3 years since last update), 
 
 
-
-### R package solution
+##### R based solution
 - [Pointblank](https://github.com/rich-iannone/pointblank/) (Very active) [docs: ](https://rich-iannone.github.io/pointblank/articles/VALID-I.html)
 - [data.validator](https://github.com/Appsilon/data.validator) (1 year since last update), 
 - [dataMaid](https://github.com/ekstroem/dataMaid) (1 year since last update),
 - [validate](https://github.com/data-cleaning/validate) (Very active)
 
-## Commerciales solutions
+#### 2.3.4 Commercials solutions
 
--[Collibra](https://www.collibra.com/us/en/platform/data-quality)
+- [Collibra](https://www.collibra.com/us/en/platform/data-quality)
 
+#### 2.3.5 Evaluations of the above tools
+
+
+
+### 2.4 Evaluate the detected anomaly
+
+The detected anomaly in previous step could be an error or a data shifting/drifting. For example, imagine in a dataset
+if the column payment contains "cash", "check", "credit-card". And your validation rule only accept these three values.
+But the company update the system and allow a new value "phone". Your validation rule will detect this value as an
+anomaly, you need to contact the data provider to confirm that this value is newly added and should be accepted.
+Then the data engineer update the validation rule set.
+
+If the anomaly is an error, we can provide cleaning guidelines. Note based on the analytics requirements, the cleaning
+process may change. For example. the null value of the salary column can be imputed to 0, if we want to calculate the
+total cost of all the salary. But if we want to calculate the average salary, the 0 imputation will cause error in our
+analysis.
+
+# Appendix
 
 ## Common problems in semi-structure data
 
