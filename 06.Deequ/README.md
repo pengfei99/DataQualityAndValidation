@@ -15,4 +15,5 @@
 - No profiler to generate possible validation rules for a given dataset.
 - Validation report is in form of spark data frame. Hard to export and read. 
 - Heavy language dependencies (scala, python)
+- Python API of Deequ has many bugs
 
