@@ -125,12 +125,15 @@ maintain.
 
 #### 2.3.2 Validation Tool evaluation metric:
 
+- flexible input data format
 - Declarative validation rule
 - Rich built-in validation rule
 - Easy to implement new validation rules
 - Able to reuse existing validation rule set
 - Provide a profiler to generate possible validation rules for a given dataset.
+- Relevance of the generated validation rules.
 - Detailed validation report that indicates which validation rule failed and which row failed the validation rule
+- Heavy dependencies on a specific language or not
 
 
 #### 2.3.3 Open source solution
@@ -163,7 +166,7 @@ maintain.
 
 #### 2.3.5 Evaluations of the above tools
 
-
+Please check this [doc](docs/data_validation_tool_evaluation.md), if you want to know the evaluation of above tools
 
 ### 2.4 Evaluate the detected anomaly
 
