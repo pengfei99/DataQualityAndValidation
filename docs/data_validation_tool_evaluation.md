@@ -114,3 +114,32 @@
 - Hard to install
 - Can't customize validation rule, you can only relax the threshold of the validation rule (e.g. skew_comparator.infinity_norm.threshold = 0.01 or drift_comparator.infinity_norm.threshold = 0.001)
 - High language dependencies, must master python
+
+## Pointblank
+Not only for data validation, but also for metadata management. 
+
+### Pros:
+- Declarative validation rule (R function)
+- Rich built-in validation rule
+- Able to reuse existing validation rule set
+- Detailed validation report that indicates which validation rule failed and which row failed the validation rule
+
+
+### Cons:
+- No profiler to generate validation rules for a given dataset.
+- Hard to implement new validation rules
+- Heavy R language dependencies.
+
+## data.validator
+
+### Pros:
+- Declarative validation rule (R function)
+- Rich built-in validation rule
+- Able to reuse existing validation rule set
+- Detailed validation report that indicates which validation rule failed and which row failed the validation rule
+
+
+### Cons:
+- No profiler to generate validation rules for a given dataset.
+- Heavy R language dependencies.
+- Hard to implement new validation rules
