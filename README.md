@@ -22,7 +22,7 @@ data validation. For more information about data quality management, please chec
 
 ## 1. What is data validation?
 
-**Data Validation is an activity verifying whether a combination of values is a member of a set of acceptable combinations.**
+**Data Validation is an activity verifying whether a combination of values is a member of a set of acceptable combinations.** - Essnet Validat Foundation
 
 
 The purpose of data validation is to ensure a certain level of quality of the final data. Data validation can help us
