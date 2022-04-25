@@ -76,7 +76,7 @@ actual value in reality, with respect to its intended use.
 - Definition: Relevance measures if data satisfait the purpose of the data collection that can help data scientist to solve the problem.
 - Good example: Data can answer all the requirement of the data scientist
 - Bad example: Data can not answer the requirement of the data scientist
-- Measurement Metric: Number of the user complaint divise all users. This can be objective, but still a good indicator
+- Measurement Metric: The number of user complaints divides all users. This can be objective, but still a good indicator
 
 ### 1.10 Interpretability 
 - Definition: Interpretability reflects the ease with which users may understand and properly use and analyse
@@ -85,7 +85,7 @@ underlying the data, and information describing the limitations of the data, if 
 the degree of interpretability
 - Good example: Self-explanatory column name, categorical values, details description of each column (e.g. null value, terminology of distinct values)
 - Bad example: Incomprehensible column name, categorical value, no description on columns.
-- Measurement Metric: Number of the user complaint divise all users. This can be objective, but still a good indicator
+- Measurement Metric: The number of user complaints divides all users. This can be objective, but still a good indicator
 
 
 ## 2 Common data quality metric
