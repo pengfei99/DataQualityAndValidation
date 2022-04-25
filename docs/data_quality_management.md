@@ -53,7 +53,7 @@ actual value in reality, with respect to its intended use.
 - Bad example: We have no idea who produced the data, and how the data is constructed.
 - Measurement Metric: The ratio/percentage of the missing metadata that describes the data provider and how data is constructed.
 
-### 1.6 Orderliness
+### 1.6 Orderliness/Validity
 - Definition: Orderliness indicates whether the ingested data set respected the required format, structure, and schema.
 - Good example: Data governance defines that date must respect ISO 8601. All the date values inside ingested data respect ISO 8601
 - Bad example: The date values of the CRM database do not respect ISO 8601.
