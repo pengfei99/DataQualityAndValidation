@@ -1,0 +1,205 @@
+{
+    "creation_metadata": {
+        "local_time": "2022-01-24 02:02:42",
+        "utc_time": "2022-01-24 10:10:42",
+        "creator": "TDDA 1.0.35",
+        "host": "ubuntu",
+        "user": "pliu",
+        "n_records": 32561,
+        "n_selected": 32561
+    },
+    "fields": {
+        "age": {
+            "type": "int",
+            "min": 0,
+            "max": 120,
+            "sign": "positive",
+            "max_nulls": 0
+        },
+        "workclass": {
+            "type": "string",
+            "min_length": 7,
+            "max_length": 16,
+            "allowed_values": [
+                "Federal-gov",
+                "Local-gov",
+                "Never-worked",
+                "Private",
+                "Self-emp-inc",
+                "Self-emp-not-inc",
+                "State-gov",
+                "Without-pay",
+                "emp-by-pengfei",
+                "workclass"
+            ]
+        },
+        "fnlwgt": {
+            "type": "string",
+            "min_length": 5,
+            "max_length": 7,
+            "max_nulls": 0
+        },
+        "education": {
+            "type": "string",
+            "min_length": 3,
+            "max_length": 12,
+            "max_nulls": 0,
+            "allowed_values": [
+                "10th",
+                "11th",
+                "12th",
+                "1st-4th",
+                "5th-6th",
+                "7th-8th",
+                "9th",
+                "Assoc-acdm",
+                "Assoc-voc",
+                "Bachelors",
+                "Doctorate",
+                "HS-grad",
+                "Masters",
+                "Preschool",
+                "Prof-school",
+                "Some-college",
+                "education"
+            ]
+        },
+        "education-num": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 13,
+            "max_nulls": 0,
+            "allowed_values": [
+                "1",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "education-num"
+            ]
+        },
+        "marital-status": {
+            "type": "string",
+            "min_length": 7,
+            "max_length": 21,
+            "max_nulls": 0,
+            "allowed_values": [
+                "Divorced",
+                "Married-AF-spouse",
+                "Married-civ-spouse",
+                "Married-spouse-absent",
+                "Never-married",
+                "Separated",
+                "Widowed",
+                "marital-status"
+            ]
+        },
+        "occupation": {
+            "type": "string",
+            "min_length": 5,
+            "max_length": 17,
+            "allowed_values": [
+                "Adm-clerical",
+                "Armed-Forces",
+                "Craft-repair",
+                "Exec-managerial",
+                "Farming-fishing",
+                "Handlers-cleaners",
+                "Machine-op-inspct",
+                "Other-service",
+                "Priv-house-serv",
+                "Prof-specialty",
+                "Protective-serv",
+                "Sales",
+                "Tech-support",
+                "Transport-moving",
+                "occupation"
+            ]
+        },
+        "relationship": {
+            "type": "string",
+            "min_length": 4,
+            "max_length": 14,
+            "max_nulls": 0,
+            "allowed_values": [
+                "Husband",
+                "Not-in-family",
+                "Other-relative",
+                "Own-child",
+                "Unmarried",
+                "Wife",
+                "relationship"
+            ]
+        },
+        "race": {
+            "type": "string",
+            "min_length": 4,
+            "max_length": 18,
+            "max_nulls": 0,
+            "allowed_values": [
+                "Amer-Indian-Eskimo",
+                "Asian-Pac-Islander",
+                "Black",
+                "Other",
+                "White",
+                "race"
+            ]
+        },
+        "sex": {
+            "type": "string",
+            "min_length": 3,
+            "max_length": 6,
+            "max_nulls": 0,
+            "allowed_values": [
+                "Female",
+                "Male",
+                "sex"
+            ]
+        },
+        "capital-gain": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 12,
+            "max_nulls": 0
+        },
+        "capital-loss": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 12,
+            "max_nulls": 0
+        },
+        "hours-per-week": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 14,
+            "max_nulls": 0
+        },
+        "native-country": {
+            "type": "string",
+            "min_length": 4,
+            "max_length": 26
+        },
+        "income": {
+            "type": "string",
+            "min_length": 4,
+            "max_length": 6,
+            "max_nulls": 0,
+            "allowed_values": [
+                "<=50K",
+                ">50K",
+                "income"
+            ]
+        }
+    }
+}
