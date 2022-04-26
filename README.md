@@ -107,13 +107,11 @@ There are different ways to categorize data validation rules. In this project I 
                     must have a format like “YYYY-MM-DD”. Username must start with Capital letter followed by min
                     Example rule: The date column must have a format such as “YYYY-MM-DD”.
 - domain specific validation rules:
-  1. Range Check (Oderliness/Validity): A range check will verify whether input data falls within a predefined range. For example. The latitude column   
-                       value must be between -90 and 90
+  1. Range Check (Oderliness/Validity): A range check will verify whether input data falls within a predefined range. For example. The latitude column value must be between -90 and 90
   3. Logic validity Check (Oderliness/Validity): It checks if values are logically valid. For example, the delivery date is always after 
                       the shipping date. if age under 15, then marital status must be not married.
   3. Code list check (Oderliness/Validity): It checks if a field is selected from a valid list of values or follows certain 
-                       formatting rules. For example, country column can only contain values from valid ISO country 
-                       codes list.
+                       formatting rules. For example, country column can only contain values from valid ISO country codes list.
   
 ### 2.3 Detect anomalies: Apply validation rules on data.
 
