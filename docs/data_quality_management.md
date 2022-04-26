@@ -210,7 +210,7 @@ data quality policies and rules with the intent to continuously improve them**.
 
 Below are some best practices that can help you improve the quality of your data.
 
-### 4.1 Integrate data quality management
+### 4.1 Integrated data quality management
 
 Integrating data quality management into data processing pipeline is hard and time consuming. It requires multiple serious steps:
 
