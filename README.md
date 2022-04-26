@@ -96,19 +96,22 @@ data validation rule. If it's an error, you need to correct it or contact data p
 
 There are different ways to categorize data validation rules. In this project I used the following categorization:
 - Generic validation rules: It does not require any domain knowledge to set up.
-    1. Presence check(not null check): Check if a column (e.g. user_id) contains null value or not.
-    2. Uniqueness Check(no duplicat check) : Check if a row value is unique in a dataset. Because, some data like 
-                                 IDs or e-mail addresses are unique by nature. Duplicates are not allowed
-    3. Type Check : A data type check confirms that the data entered has the correct data type. Numeric column 
-                        can't have string value.
+    1. Presence check (Completeness): Check if a column (e.g. user_id) contains null value or not. Example rule:
+                           The number of null value of column user_id must be 0.  
+    3. Duplication check (Uniqueness): Check if a row value is unique in a dataset. Because, some data like 
+                                 IDs or e-mail addresses are unique by nature. Duplicates are not allowed.
+                           Example rule: The user email column must be unique.
+    3. Type Check (Oderliness/Validity): A data type check confirms that the data entered has the correct data type. Numeric column 
+                        can't have string value. Example rule: The age column can’t have string value
     4. Format Check : Many data types follow a certain predefined format. For example, date columns
                     must have a format like “YYYY-MM-DD”. Username must start with Capital letter followed by min
+                    Example rule: The date column must have a format such as “YYYY-MM-DD”.
 - domain specific validation rules:
-  1. Range Check: A range check will verify whether input data falls within a predefined range. For example, 
-                     A latitude value should be between -90 and 90,
-  2. Consistency Check: It checks if values are logically consistent. For example, the delivery date is always after 
+  1. Range Check (Oderliness/Validity): A range check will verify whether input data falls within a predefined range. For example. The latitude column   
+                       value must be between -90 and 90
+  3. Logic validity Check (Oderliness/Validity): It checks if values are logically valid. For example, the delivery date is always after 
                       the shipping date. if age under 15, then marital status must be not married.
-  3. Code list check: It checks if a field is selected from a valid list of values or follows certain 
+  3. Code list check (Oderliness/Validity): It checks if a field is selected from a valid list of values or follows certain 
                        formatting rules. For example, country column can only contain values from valid ISO country 
                        codes list.
   
