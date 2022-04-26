@@ -233,7 +233,7 @@ rules. This rule can help you detect anomalies inside a dataset before it enters
 
 ### 4.4 Taking care of both master and metadata
 
-Master data can help you to build a common reference (e.g. standard currency code, product catalog, etc) that every 
+Master data can help you to build a common reference (e.g. standard currency code, product catalog, etc) that everyone 
 can rely on. This can reduce term or format mismatch, thus improves orderliness of data. 
 
 Metadata can help you identify and find data and its properties easily. For example, data time stamp can help you 
