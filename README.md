@@ -138,6 +138,8 @@ maintain.
 
 #### 2.3.3 Open source solution
 
+The baseline year for the activity check is **January 2022**. 
+
 ##### Python based solution
  
 - [Great Expectations](https://github.com/great-expectations/great_expectations) (Very Active)
