@@ -188,8 +188,9 @@ At this stage, we need to identify the root cause of the data quality issues, an
 For example, for orderliness of the customer address, because the address is entered manually by different employee, 
 and everyone has their own way to write an address. 
 
-Short term solution: we need to ask data engineer to clean the column by converting all address to one single standard format.
-Long term solution: we need to introduce clear standards for customer address manual data entries, as well as data 
+- Short term solution: we need to ask data engineer to clean the column by converting all address to one single standard format.
+
+- Long term solution: we need to introduce clear standards for customer address manual data entries, as well as data 
 quality-related key performance indicators for the employees responsible for keying data into the database. We can also
 set a validation rule in the system that will not accept an address unless it complies with the format or range.
 
