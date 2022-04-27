@@ -188,8 +188,9 @@ At this stage, we need to identify the root cause of the data quality issues, an
 For example, for orderliness of the customer address, because the address is entered manually by different employee, 
 and everyone has their own way to write an address. 
 
-Short term solution: we need to ask data engineer to clean the column by converting all address to one single standard format.
-Long term solution: we need to introduce clear standards for customer address manual data entries, as well as data 
+- Short term solution: we need to ask data engineer to clean the column by converting all address to one single standard format.
+
+- Long term solution: we need to introduce clear standards for customer address manual data entries, as well as data 
 quality-related key performance indicators for the employees responsible for keying data into the database. We can also
 set a validation rule in the system that will not accept an address unless it complies with the format or range.
 
@@ -209,7 +210,7 @@ data quality policies and rules with the intent to continuously improve them**.
 
 Below are some best practices that can help you improve the quality of your data.
 
-### 4.1 Integrate data quality management
+### 4.1 Integrated data quality management
 
 Integrating data quality management into data processing pipeline is hard and time consuming. It requires multiple serious steps:
 
@@ -232,7 +233,7 @@ rules. This rule can help you detect anomalies inside a dataset before it enters
 
 ### 4.4 Taking care of both master and metadata
 
-Master data can help you to build a common reference (e.g. standard currency code, product catalog, etc) that every 
+Master data can help you to build a common reference (e.g. standard currency code, product catalog, etc) that everyone 
 can rely on. This can reduce term or format mismatch, thus improves orderliness of data. 
 
 Metadata can help you identify and find data and its properties easily. For example, data time stamp can help you 
