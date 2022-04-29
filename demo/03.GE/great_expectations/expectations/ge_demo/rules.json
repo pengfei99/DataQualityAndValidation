@@ -8,6 +8,86 @@
         "column": "age"
       },
       "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "age",
+          "workclass",
+          "fnlwgt",
+          "education",
+          "education-num",
+          "marital-status",
+          "occupation",
+          "relationship",
+          "race",
+          "sex",
+          "capital-gain",
+          "capital-loss",
+          "hours-per-week",
+          "native-country",
+          "income"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 32603,
+        "min_value": 32603
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "age",
+          "workclass",
+          "fnlwgt",
+          "education",
+          "education-num",
+          "marital-status",
+          "occupation",
+          "relationship",
+          "race",
+          "sex",
+          "capital-gain",
+          "capital-loss",
+          "hours-per-week",
+          "native-country",
+          "income"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "age",
+        "regex": "^[-+]?\\d+$"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 0,
+        "min_value": 0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "age",
+        "max_value": 120,
+        "min_value": 120
+      },
+      "meta": {}
     }
   ],
   "ge_cloud_id": null,
