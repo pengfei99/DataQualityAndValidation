@@ -104,7 +104,7 @@ data_docs_sites:
   local_site:
     class_name: SiteBuilder
     # set to false to hide how-to buttons in Data Docs
-    show_how_to_buttons: true
+    show_how_to_buttons: false
     store_backend:
       class_name: TupleFilesystemStoreBackend
       base_directory: uncommitted/data_docs/local_site/
@@ -112,6 +112,6 @@ data_docs_sites:
       class_name: DefaultSiteIndexBuilder
 
 anonymous_usage_statistics:
-  enabled: true
+  enabled: false
   data_context_id: 4dbedb73-5119-4a4d-8376-009037a0ddce
 notebooks:
