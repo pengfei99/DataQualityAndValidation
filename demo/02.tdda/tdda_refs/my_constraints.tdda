@@ -11,7 +11,7 @@
     "fields": {
         "age": {
             "type": "int",
-            "max_nulls": 0,
+            "max_nulls": 1,
             "min": 0,
             "max": 120
         }
