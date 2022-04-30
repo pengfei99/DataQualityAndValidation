@@ -72,20 +72,11 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_min_to_be_between",
-      "kwargs": {
-        "column": "age",
-        "max_value": 0,
-        "min_value": 0
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_max_to_be_between",
+      "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "age",
         "max_value": 120,
-        "min_value": 120
+        "min_value": 0
       },
       "meta": {}
     }
