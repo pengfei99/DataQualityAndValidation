@@ -4,9 +4,7 @@
         "utc_time": "2022-01-24 10:10:42",
         "creator": "TDDA 1.0.35",
         "host": "ubuntu",
-        "user": "pliu",
-        "n_records": 32561,
-        "n_selected": 32561
+        "user": "pliu"
     },
     "fields": {
         "age": {
