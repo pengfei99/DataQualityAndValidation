@@ -1,9 +1,24 @@
 # Data Quality And Validation
 
+Data quality is the key component of data governance, it implements the standards, process, and metrics of data quality
+defined by the data governance. Below figure shows the relation between data quality management and data governance
 
-## 0. Data quality introduction
+![data_quality_control_terms.jpg](images/data_quality_control_terms.jpg)
 
-Data quality describes the state of data that can be either “good” or “bad”. And we have the following dimensions to 
+
+There is two subdomain in data quality management:
+- Quality Assurance: it defines standards, process and best practices for preventing errors enters into datasets. 
+                      For example, we can define standards for `Formats/Encoding, Measurement units` to prevent conversion
+                      errors. We can define best practices for `metadata assign responsibility`. We can also provide 
+                      training and documentation.
+
+- Quality Control: it monitors and maintains the data quality throughout the data life-cycle. We need to provide tools
+                    or framework that can do `Data quality evaluation`, `Data quality monitoring/alerting`, and
+                    `Data quality reporting`.
+
+## 0. Data quality control introduction
+
+Data quality describes the state of data that can be either “good” or “bad”. And we have the following dimensions/metrics to 
 measure it:
 - Accuracy
 - Auditability
