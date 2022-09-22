@@ -75,6 +75,22 @@
         "min_value": 0.0
       },
       "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "workclass",
+        "value_set": ["Self-emp-not-inc",
+                      "Local-gov",
+                      "State-gov",
+                      "Private",
+                      "Without-pay",
+                      "Federal-gov",
+                      "Never-worked",
+                      "Self-emp-inc",
+                     "emp-by-pengfei"]
+      },
+      "meta": {}
     }
   ],
   "ge_cloud_id": null,
